@@ -161,8 +161,17 @@ def app_version() -> str | None:
     exe = app_exe()
     if exe and OS == "Darwin":
         try:
-            return plistlib.loads((exe / "Contents" / "Info.plist").read_bytes()).get("CFBundleShortVersionString")
+            v = plistlib.loads((exe / "Contents" / "Info.plist").read_bytes()).get("CFBundleShortVersionString")
+            if v:
+                return v
         except Exception:
+            pass
+        # The macOS bundle (3.4.4) has no version keys; the data folder's version.txt has "version=3.4.4".
+        root, _ = deck_root(required=False)
+        try:
+            m = re.search(r"version=(\S+)", (root / "version.txt").read_text()) if root else None
+            return m.group(1) if m else None
+        except OSError:
             return None
     return None
 
@@ -330,9 +339,10 @@ def device_settings(root: Path) -> tuple[list[dict], dict]:
 
 
 def keypad(page_manifest: dict) -> dict:
+    # Only "<col>_<row>" entries are keys; macOS folder pages also carry an "Icon" entry.
     for c in page_manifest.get("Controllers", []):
         if c.get("Type") == "Keypad":
-            return c.get("Actions") or {}
+            return {k: a for k, a in (c.get("Actions") or {}).items() if re.fullmatch(r"\d+_\d+", k)}
     return {}
 
 
@@ -483,8 +493,9 @@ def cmd_export(args):
             imgs = []
             for j, v in enumerate(vp):
                 src = Path(v.get("Icon") or "")
-                if not src.is_file() and v.get("IconRel"):
-                    src = d / v["IconRel"]
+                rel = v.get("IconRel") or v.get("IconEx")  # the macOS app writes IconEx on folder pages
+                if not src.is_file() and rel:
+                    src = d / rel
                 if src.is_file():
                     dst = img_dir / f"{ids[g]}_{k}_{j}{src.suffix}"
                     shutil.copy2(src, dst)

@@ -101,7 +101,7 @@ The agent follows [`SKILL.md`](skills/ulanzi-deck/SKILL.md): orient with `state`
 |---|---|---|---|
 | Ulanzi Studio | yes | yes | no official app |
 | Build layouts + previews | yes | yes | yes |
-| Apply profiles | verified (Ulanzi Studio 3.4, D200H) | after a one-time calibration (`--force-unverified`) | no; use the community tools in [platforms.md](skills/ulanzi-deck/references/platforms.md) |
+| Apply profiles | verified (Ulanzi Studio 3.4, D200H) | verified (Ulanzi Studio 3.4.4, D200H); pass `--force-unverified` | no; use the community tools in [platforms.md](skills/ulanzi-deck/references/platforms.md) |
 
 ## Project structure
 

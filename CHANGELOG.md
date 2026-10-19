@@ -1,5 +1,21 @@
 # Changelog
 
+## Unreleased
+
+### Fixed (macOS)
+- `keymap` and `export` crashed on folder pages: the macOS app stores a non-key `"Icon"` entry in
+  `Keypad.Actions`; only `<col>_<row>` keys are read now.
+- `state` showed `version None`: the macOS bundle has no version keys, so the version comes from the
+  data folder's `version.txt`.
+- `export` falls back to `IconEx` (used by the macOS app on folder pages) when `IconRel` is missing.
+- Example layout and schema used `Cmd+Shift+4` for macOS hotkeys; Ulanzi Studio stores `⇧ ⌘ 4`.
+  The example's Docker key also accepts the macOS name `Docker`.
+
+### Verified
+- `apply` on macOS (Ulanzi Studio 3.4.4, D200H, macOS 26): 2 pages and 3 folders with app, web,
+  hotkey, media and OBS keys, re-saved by the app (`VERIFY ... -> OK`). Observed on-disk formats
+  are recorded in `references/platforms.md`.
+
 ## 0.1.0 — 2026-10-18
 
 ### Added

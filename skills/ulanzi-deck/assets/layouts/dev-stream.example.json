@@ -11,8 +11,8 @@
         "2_0": { "kind": "app", "label": "VS Code", "color": "#2F9BF0", "app": ["Visual Studio Code", "Code"] },
         "3_0": { "kind": "app", "label": "Terminal", "color": "#B4BAC4", "app": ["Terminal", "Windows Terminal"] },
         "4_0": { "kind": "web", "label": "GitHub", "color": "#A371F7", "url": "https://github.com", "glyph": "code" },
-        "0_1": { "kind": "app", "label": "Docker", "color": "#2496ED", "app": "Docker Desktop" },
-        "1_1": { "kind": "hotkey", "label": "Screenshot", "color": "#E6E6E6", "hotkey": { "windows": "Win+Shift+S", "macos": "Cmd+Shift+4" }, "glyph": "content_cut" },
+        "0_1": { "kind": "app", "label": "Docker", "color": "#2496ED", "app": ["Docker Desktop", "Docker"] },
+        "1_1": { "kind": "hotkey", "label": "Screenshot", "color": "#E6E6E6", "hotkey": { "windows": "Win+Shift+S", "macos": "⇧ ⌘ 4" }, "glyph": "content_cut" },
         "0_2": { "kind": "folder", "label": "Media", "color": "#1DB954", "target": "media", "glyph": "folder" },
         "2_2": { "kind": "next", "label": "Stream", "color": "#FE2C55", "glyph": "arrow_forward" }
       }

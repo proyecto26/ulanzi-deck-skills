@@ -77,8 +77,9 @@ approving: typing text with Enter, `raw` actions, non-http(s) URLs, script files
   Run `ulanzi.py find-apps --filter <regex>` to see the exact names on this machine.
 - Use a list when names differ per OS: `"app": ["OBS Studio", "OBS"]`.
 - `app`, `path`, `hotkey`, `url`, `text` also accept a per-OS object:
-  `"hotkey": {"windows": "Win+Shift+S", "macos": "Cmd+Shift+4"}` (macOS hotkey spelling is
-  unverified: calibrate one hotkey first).
+  `"hotkey": {"windows": "Win+Shift+S", "macos": "⇧ ⌘ 4"}`. On macOS Ulanzi Studio (3.4.4) stores
+  hotkeys as modifier symbols separated by spaces, in the order `⌃ ⌥ ⇧ ⌘`, then the key
+  (its stock profile has `"⇧ ⌘ 5"` and `"⇧ ⌘ 4"`); `Cmd+Shift+4` is not that format.
 - `path` expands environment variables (`%APPDATA%\\...` on Windows, `$HOME/...` elsewhere).
 - Never commit machine-specific paths, device uuids or user names into a shared layout:
   keep `uuid: "auto"` and app names.

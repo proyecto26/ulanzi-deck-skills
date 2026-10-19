@@ -8,7 +8,7 @@ Windows 10+ and macOS 12+ (Apple silicon and Intel). There is no official Linux 
 | Official app | Ulanzi Studio (`UlanziDeck.exe`) | Ulanzi Studio (`/Applications/Ulanzi Studio.app`) | none |
 | Data folder | `%APPDATA%\Ulanzi\UlanziDeck` **verified** | expected `~/Library/Application Support/Ulanzi/UlanziDeck` **unverified** | n/a |
 | `ulanzi.py build` | yes | yes | yes (key art only) |
-| `ulanzi.py apply` | yes (Ulanzi Studio 3.4, D200H) | always needs `--force-unverified`; use it only after calibration | no (community tools instead) |
+| `ulanzi.py apply` | yes (Ulanzi Studio 3.4, D200H) | worked on Ulanzi Studio 3.4.4 + D200H (macOS 26); still needs `--force-unverified` | no (community tools instead) |
 | App icons | Windows shell (`.lnk`, `.exe`, Store apps) | `.icns` from the bundle, Quick Look fallback | `.desktop` Icon (PNG themes only) |
 | Window screenshot | `scripts/win/capture_window.ps1` | `screencapture` (see below) | n/a |
 
@@ -53,10 +53,22 @@ Nothing on macOS has been verified with these scripts. Do this once per Mac befo
 4. `apply --force-unverified` is always required on macOS (the check cannot know you calibrated):
    pass it only after steps 2-3 matched, use a **new profile name** first, check it in the app, and
    keep the printed backup path for `restore`.
+- Observed on Ulanzi Studio 3.4.4 with a D200H (macOS 26), from the stock profiles and the
+  bundled plugins, then confirmed by an `apply` of 5 pages (2 pages, 3 folders, app/web/hotkey/media/OBS
+  keys) that the app re-saved (`VERIFY ... -> OK`):
+  - The data folder is the expected `~/Library/Application Support/Ulanzi/UlanziDeck`.
+  - Open keys store the `.app` bundle path (`/Applications/OBS.app`), as `find-apps` resolves it.
+  - Hotkeys use symbols: `"⇧ ⌘ 5"` (see layout-schema.md, Portability).
+  - `ViewParam.Icon` is an absolute path; top-level pages add `IconRel`, folder pages `IconEx`.
+  - Folder pages carry an extra non-key `"Icon"` entry in `Keypad.Actions` (ignored by the tool).
+  - The OBS plugin (`System/Plugins/com.ulanzi.obsstudio.ulanziPlugin`) has the same UUID,
+    version 1.0.0 and action ids as on Windows.
+  - The bundle has no version keys; `state` reads the version from the data folder's `version.txt`.
 - Hotkeys need Accessibility permission for Ulanzi Studio (System Settings > Privacy & Security >
   Accessibility). The SDK warns that launching it with `open --args` can break that permission.
-- Screenshot: `screencapture -x <png>` (whole screen) or `screencapture -w <png>` (click a window;
-  needs the user). Show the PNG with Read.
+- Screenshot: `screencapture -x -o -l <window id> <png>` captures just the Ulanzi Studio window with
+  no clicks (get the id from `CGWindowListCopyWindowInfo`, owner name `UlanziDeck`, e.g. with a
+  `swift -e` one-liner); `screencapture -w <png>` lets the user click the window instead. Show the PNG with Read.
 
 ## Linux (no Ulanzi Studio)
 

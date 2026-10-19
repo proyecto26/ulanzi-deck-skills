@@ -151,6 +151,19 @@ class ExportRoundTripTests(unittest.TestCase):
         self.assertEqual(len(specs["0_0"]["files"]), 2)
         self.assertEqual(len(specs["1_0"]["files"]), 3)
 
+    def test_non_grid_keypad_entries_are_ignored(self):
+        # macOS folder pages store an "Icon" entry next to the keys in Keypad.Actions.
+        m = self.data / "ProfilesV2" / "p1.ulanziProfile" / "Profiles" / "pg1" / "manifest.json"
+        pm = json.loads(m.read_text())
+        pm["Controllers"][1]["Actions"]["Icon"] = {}
+        m.write_text(json.dumps(pm))
+        code, out = run_cli("keymap", "--profile", "Fixture")
+        self.assertEqual(code, 0, out)
+        lay = self.tmp / "out" / "layout.json"
+        code, out = run_cli("export", "--profile", "Fixture", "-o", str(lay))
+        self.assertEqual(code, 0, out)
+        self.assertNotIn("Icon", json.loads(lay.read_text(encoding="utf-8"))["pages"][0]["keys"])
+
 
 class ValidationTests(unittest.TestCase):
     """Findings from the plugin-validator / skill-reviewer pass, each pinned by a test."""
