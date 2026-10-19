@@ -1,0 +1,37 @@
+{
+  "name": "ulanzi-deck-skills",
+  "version": "0.1.0",
+  "description": "Configure Ulanzi stream controllers (D200H and family) from your AI agent: build whole Ulanzi Studio profiles with app launchers, hotkeys, media and OBS keys, pages and folders, generated key art and a preview, then apply them with automatic backups and rollback. Windows and macOS, with Linux guidance.",
+  "author": {
+    "name": "Proyecto 26",
+    "url": "https://github.com/proyecto26"
+  },
+  "homepage": "https://github.com/proyecto26/ulanzi-deck-skills",
+  "repository": "https://github.com/proyecto26/ulanzi-deck-skills",
+  "license": "MIT",
+  "keywords": [
+    "ulanzi",
+    "ulanzi-studio",
+    "d200h",
+    "stream-deck",
+    "stream-controller",
+    "streaming",
+    "obs",
+    "macro-keys",
+    "profiles"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Ulanzi Deck",
+    "shortDescription": "Design and apply Ulanzi stream controller profiles",
+    "longDescription": "Builds whole Ulanzi Studio profiles for Ulanzi stream controllers (D200H and family) from a small portable layout file: app launchers resolved by name on each OS, websites, hotkeys, media keys, OBS live/record keys, pages and folders. Renders consistent key art and a preview image, applies the profile with an automatic backup and verification, exports existing profiles for editing, and restores backups.",
+    "developerName": "Proyecto 26",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/proyecto26/ulanzi-deck-skills",
+    "defaultPrompt": [
+      "Set up my Ulanzi D200H with a coding page and a streaming page",
+      "Add OBS live and record buttons to my Ulanzi deck and show me a preview",
+      "Export my current Ulanzi profile so I can edit it"
+    ]
+  }
+}

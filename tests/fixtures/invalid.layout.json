@@ -1,0 +1,18 @@
+{
+  "profileName": "Invalid",
+  "device": { "model": "D200H", "uuid": "auto" },
+  "pages": [
+    {
+      "id": "main",
+      "title": "Main",
+      "keys": {
+        "3_2": { "kind": "web", "label": "On the screen", "url": "https://example.com" },
+        "5_0": { "kind": "web", "label": "Off grid", "url": "https://example.com" },
+        "0_0": { "kind": "teleport", "label": "Bad kind" },
+        "1_0": { "kind": "media", "label": "Bad media", "media": "Volume_Up" },
+        "2_0": { "kind": "folder", "label": "Nowhere", "target": "missing" },
+        "3_0": { "kind": "app", "label": "No target" }
+      }
+    }
+  ]
+}

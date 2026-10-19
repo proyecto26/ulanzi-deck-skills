@@ -1,0 +1,50 @@
+{
+  "skill_name": "ulanzi-deck",
+  "evals": [
+    {
+      "id": 1,
+      "name": "windows-edit-full-page-preview",
+      "prompt": "Quiero agregar Steam y WhatsApp a la página de Stream de mi Ulanzi D200H y cambiar el color de la tecla de Discord a morado. Muéstrame cómo quedaría antes de aplicarlo.",
+      "expected_output": "Exports the active profile, notices the Stream page has no free keys, places Steam/WhatsApp without silently dropping existing keys (new page/folder or explicit proposal), recolors Discord purple, builds a preview PNG, and asks for approval before applying. Nothing in the real Ulanzi data folder changes.",
+      "files": [],
+      "assertions": [
+        "Real Ulanzi data folder unchanged (profiles, settings and backups identical to the pre-run snapshot)",
+        "Edited layout includes Steam and WhatsApp keys",
+        "Steam and WhatsApp are on the Stream page itself, or the answer explains why they had to go into a folder/new page because the page is full",
+        "Discord key is visibly purple in the rendered key image (hue between ~250 and ~310 degrees)",
+        "No existing Stream-page key silently dropped (all original keys kept, or the answer names what it replaces)",
+        "A rendered preview of the Stream page (not just intermediate icons) is produced and shown or referenced in the answer",
+        "Answer asks for approval before applying (does not claim it was applied)",
+        "Answer tells the user what each changed key does"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "macos-obs-discord-spotify",
+      "prompt": "Me compré un Ulanzi D200H y lo uso en mi MacBook Pro con Ulanzi Studio. Quiero una página con OBS, Discord, Spotify y botones para iniciar/parar la transmisión y la grabación de OBS. ¿Cómo lo configuro con este método? Dame los pasos y el archivo de layout listo para usar.",
+      "expected_output": "Step-by-step macOS guide that treats the data folder and hotkey/Open formats as unverified (discovery + calibration before apply), a portable layout JSON using app names and obs kinds, OBS WebSocket setup, uv/python3 commands, no Windows paths.",
+      "files": [],
+      "assertions": [
+        "Treats the macOS data folder / formats as unverified and includes a discovery or calibration step",
+        "Layout has OBS, Discord and Spotify launchers plus OBS stream and record keys",
+        "layout.json passes `ulanzi.py build` validation (portable app names, no Windows paths)",
+        "Explains OBS WebSocket setup for the OBS keys",
+        "Tells the user to look at the preview (and the key list) before applying, and how to roll back"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "linux-ubuntu-d200h",
+      "prompt": "Tengo Ubuntu 24.04 y un Ulanzi D200H. ¿Puedo usar Ulanzi Studio? Quiero teclas para abrir Firefox, la terminal y OBS, y un botón para silenciar el micrófono.",
+      "expected_output": "Says plainly Ulanzi Studio has no Linux version; recommends the unofficial community driver while flagging that D200H support is unconfirmed; gives concrete setup guidance for the four keys (or points to the driver's README) and offers rendering key art with build.",
+      "files": [],
+      "assertions": [
+        "States plainly that Ulanzi Studio is not available for Linux",
+        "Recommends the OpenDeck + 'OpenDeck Ulanzi D200 Driver' plugin, which explicitly lists the D200H, as the primary option",
+        "Attributes any D200H support claim to its source and flags the tools as unofficial/community",
+        "Covers all four requested keys (Firefox, terminal, OBS, mic mute) with concrete actions",
+        "Mic mute works on Wayland (e.g. PipeWire wpctl/pactl), not only via simulated keyboard shortcuts"
+      ]
+    }
+  ]
+}

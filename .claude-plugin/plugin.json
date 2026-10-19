@@ -1,0 +1,23 @@
+{
+  "name": "ulanzi-deck-skills",
+  "version": "0.1.0",
+  "description": "Configure Ulanzi stream controllers (D200H and family) from your AI agent: build whole Ulanzi Studio profiles with app launchers, hotkeys, media and OBS keys, pages and folders, generated key art and a preview, then apply them with automatic backups and rollback. Windows and macOS, with Linux guidance.",
+  "author": {
+    "name": "Proyecto 26",
+    "url": "https://github.com/proyecto26"
+  },
+  "repository": "https://github.com/proyecto26/ulanzi-deck-skills",
+  "homepage": "https://github.com/proyecto26/ulanzi-deck-skills",
+  "license": "MIT",
+  "keywords": [
+    "ulanzi",
+    "ulanzi-studio",
+    "d200h",
+    "stream-deck",
+    "stream-controller",
+    "streaming",
+    "obs",
+    "macro-keys",
+    "profiles"
+  ]
+}

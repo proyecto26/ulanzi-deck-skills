@@ -1,0 +1,20 @@
+{
+  "name": "ulanzi-deck-skills-marketplace",
+  "interface": {
+    "displayName": "Ulanzi Deck"
+  },
+  "plugins": [
+    {
+      "name": "ulanzi-deck-skills",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

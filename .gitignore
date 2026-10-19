@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Generated key art, previews and exports (render them locally)
+outputs/
+ulanzi-build-*/
+*_images/
+
+# Skill eval workspaces (contain machine-specific outputs and screenshots)
+skills/*-workspace/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Agent state
+.claude/
+.remember/

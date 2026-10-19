@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ulanzi-deck-skills",
+  "description": "Skills to configure Ulanzi stream controllers (D200H and family) and Ulanzi Studio profiles from your AI agent",
+  "owner": {
+    "name": "Proyecto 26"
+  },
+  "plugins": [
+    {
+      "name": "ulanzi-deck-skills",
+      "description": "Configure Ulanzi stream controllers (D200H and family) from your AI agent: build whole Ulanzi Studio profiles with app launchers, hotkeys, media and OBS keys, pages and folders, generated key art and a preview, then apply them with automatic backups and rollback. Windows and macOS, with Linux guidance.",
+      "version": "0.1.0",
+      "source": "./"
+    }
+  ]
+}

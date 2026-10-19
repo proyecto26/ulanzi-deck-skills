@@ -1,0 +1,48 @@
+{
+  "profileName": "Dev & Stream",
+  "device": { "model": "D200H", "uuid": "auto" },
+  "pages": [
+    {
+      "id": "dev",
+      "title": "Dev",
+      "keys": {
+        "0_0": { "kind": "app", "label": "Claude", "color": "#D97757", "app": "Claude" },
+        "1_0": { "kind": "app", "label": "ChatGPT", "color": "#10A37F", "app": "ChatGPT" },
+        "2_0": { "kind": "app", "label": "VS Code", "color": "#2F9BF0", "app": ["Visual Studio Code", "Code"] },
+        "3_0": { "kind": "app", "label": "Terminal", "color": "#B4BAC4", "app": ["Terminal", "Windows Terminal"] },
+        "4_0": { "kind": "web", "label": "GitHub", "color": "#A371F7", "url": "https://github.com", "glyph": "code" },
+        "0_1": { "kind": "app", "label": "Docker", "color": "#2496ED", "app": "Docker Desktop" },
+        "1_1": { "kind": "hotkey", "label": "Screenshot", "color": "#E6E6E6", "hotkey": { "windows": "Win+Shift+S", "macos": "Cmd+Shift+4" }, "glyph": "content_cut" },
+        "0_2": { "kind": "folder", "label": "Media", "color": "#1DB954", "target": "media", "glyph": "folder" },
+        "2_2": { "kind": "next", "label": "Stream", "color": "#FE2C55", "glyph": "arrow_forward" }
+      }
+    },
+    {
+      "id": "stream",
+      "title": "Stream",
+      "keys": {
+        "0_0": { "kind": "app", "label": "OBS", "color": "#C9CDD8", "app": ["OBS Studio", "OBS"] },
+        "1_0": { "kind": "app", "label": "Discord", "color": "#5865F2", "app": "Discord" },
+        "0_1": { "kind": "obs", "label": "Live", "color": "#FF3B5C", "obs": "stream", "badge": "LIVE" },
+        "1_1": { "kind": "obs", "label": "Record", "color": "#FF5A5A", "obs": "record", "glyph": "fiber_manual_record" },
+        "2_1": { "kind": "obs", "label": "Virtual cam", "color": "#3DA5F5", "obs": "virtualcam", "glyph": "videocam" },
+        "3_1": { "kind": "obs", "label": "Save replay", "color": "#F5A524", "obs": "replaybuffersave", "glyph": "replay" },
+        "0_2": { "kind": "prev", "label": "Dev", "color": "#D97757", "glyph": "arrow_back" }
+      }
+    },
+    {
+      "id": "media",
+      "title": "Media",
+      "folder": true,
+      "keys": {
+        "0_0": { "kind": "back", "label": "Back", "color": "#E6E6E6", "glyph": "arrow_back" },
+        "1_0": { "kind": "app", "label": "Spotify", "color": "#1DB954", "app": "Spotify" },
+        "0_1": { "kind": "media", "label": "Prev", "color": "#1DB954", "media": "Prev_Track", "glyph": "skip_previous" },
+        "1_1": { "kind": "media", "label": "Play/Pause", "color": "#1DB954", "media": "Play_Pause", "glyph": "play_arrow" },
+        "2_1": { "kind": "media", "label": "Next", "color": "#1DB954", "media": "Next_Track", "glyph": "skip_next" },
+        "3_1": { "kind": "media", "label": "Mute", "color": "#E6E6E6", "media": "Volumn_Mute", "glyph": "volume_off" },
+        "4_1": { "kind": "text", "label": "Shrug", "color": "#E6E6E6", "text": "¯\\_(ツ)_/¯", "glyph": "chat" }
+      }
+    }
+  ]
+}

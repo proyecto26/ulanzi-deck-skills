@@ -1,0 +1,37 @@
+{
+  "profileName": "Smoke Test",
+  "device": { "model": "D200H", "uuid": "auto" },
+  "pages": [
+    {
+      "id": "main",
+      "title": "Main",
+      "keys": {
+        "0_0": { "kind": "web", "label": "Docs", "color": "#2F9BF0", "url": "https://example.com", "glyph": "public" },
+        "1_0": { "kind": "hotkey", "label": "Mute mic", "color": "#FF5A5A", "hotkey": { "windows": "Ctrl+Shift+M", "macos": "Cmd+Shift+M", "linux": "Ctrl+Shift+M" }, "glyph": "mic_off" },
+        "2_0": { "kind": "media", "label": "Play/Pause", "color": "#1DB954", "media": "Play_Pause", "glyph": "play_arrow" },
+        "3_0": { "kind": "text", "label": "Hello", "color": "#E6E6E6", "text": "Hello chat!", "enter": true, "glyph": "chat" },
+        "4_0": { "kind": "obs", "label": "Live", "color": "#FF3B5C", "obs": "stream", "badge": "LIVE" },
+        "0_1": { "kind": "obs", "label": "Scene BRB", "color": "#9B59B6", "obs": "scene", "glyph": "coffee", "params": { "SceneName": "BRB" } },
+        "1_1": { "kind": "raw", "label": "Raw", "color": "#F5A524", "glyph": "bolt", "action": "com.ulanzi.ulanzideck.system.website",
+                 "plugin": { "Name": "System", "UUID": "com.ulanzi.deck.system", "Version": "1.0" }, "params": { "Url": "https://example.org" } },
+        "0_2": { "kind": "folder", "label": "More", "color": "#76B900", "target": "more", "glyph": "folder" },
+        "2_2": { "kind": "next", "label": "Next", "color": "#E6E6E6", "glyph": "arrow_forward" }
+      }
+    },
+    {
+      "id": "second",
+      "title": "Second",
+      "keys": {
+        "0_2": { "kind": "prev", "label": "Back", "color": "#E6E6E6", "glyph": "arrow_back" }
+      }
+    },
+    {
+      "id": "more",
+      "title": "More",
+      "folder": true,
+      "keys": {
+        "0_0": { "kind": "back", "label": "Back", "color": "#E6E6E6", "glyph": "arrow_back" }
+      }
+    }
+  ]
+}
