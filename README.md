@@ -5,6 +5,8 @@
 [![Agent Plugins](https://img.shields.io/badge/Agent_Plugins-1.0-blue)](https://agent-plugins.org/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B_%7C_uv-informational)](https://docs.astral.sh/uv/)
 
+<img src="https://github.com/proyecto26/sherlock-ai-plugin/blob/main/images/claude-mascot-jumping-animated.svg" width="150">
+
 **Configure Ulanzi stream controllers from your AI agent.** Describe the keys you want ("a coding
 page with Claude, VS Code and the terminal, and a streaming page with OBS live/record buttons")
 and the agent builds the whole Ulanzi Studio profile: launchers resolved for your OS, websites,
@@ -138,8 +140,45 @@ Skill quality is evaluated with Anthropic's skill-creator: prompts and assertion
 - Ulanzi Studio's optional AI-agent status monitor edits your agents' config files; the skill
   explains exactly what changes and asks first.
 
-## License and credits
+---
 
-MIT © Proyecto 26. Not affiliated with Ulanzi. Glyphs: [Material Icons](https://github.com/google/material-design-icons)
-(Apache-2.0, `skills/ulanzi-deck/assets/fonts/LICENSE-MaterialIcons.txt`). Linux guidance references the community
-projects [OpenDeck](https://github.com/nekename/OpenDeck) with the [OpenDeck Ulanzi D200 Driver](https://gitlab.com/glmagalhaes.mail/rs-ulanzi-d-200-linux), [aleyvag/ulanzi-d200h-linux](https://github.com/aleyvag/ulanzi-d200h-linux) and [racerxdl/ulanzi-d200-linux](https://github.com/racerxdl/ulanzi-d200-linux).
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=proyecto26/ulanzi-deck-skills&type=Date)](https://star-history.com/#proyecto26/ulanzi-deck-skills&Date)
+
+## 💜 Sponsors
+
+This project is free and open source. Sponsors help keep it maintained and growing.
+
+[**Become a Sponsor**](https://github.com/sponsors/proyecto26) | [Sponsorship Program](https://proyecto26.com/sponsors/)
+
+## 🤝 Contribution
+
+When contributing to this repository, please first discuss the change you wish to make via issue,
+email, or any other method with the owners of this repository before making a change.
+ 
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated** ❤️.
+ 
+You can learn more about how you can contribute to this project in the [contribution guide](https://github.com/proyecto26/.github/blob/master/CONTRIBUTING.md).
+
+## ⚖️ License
+This repository is available under the [MIT License](./LICENSE).
+
+The bundled Material Icons font keeps its own license (Apache-2.0, [`LICENSE-MaterialIcons.txt`](skills/ulanzi-deck/assets/fonts/LICENSE-MaterialIcons.txt)).
+This project is not affiliated with or endorsed by Ulanzi; "Ulanzi" and "Ulanzi Studio" are trademarks of their owners.
+
+## 👍 Credits
+
+- [Material Icons](https://github.com/google/material-design-icons) — Glyphs for the generated key art
+- [UlanziDeckPlugin SDK](https://github.com/UlanziTechnology/UlanziDeckPlugin-SDK) — Ulanzi Studio actions and plugin reference
+- [OpenDeck](https://github.com/nekename/OpenDeck) + [OpenDeck Ulanzi D200 Driver](https://gitlab.com/glmagalhaes.mail/rs-ulanzi-d-200-linux) — Linux path for the D200 and D200H
+- [aleyvag/ulanzi-d200h-linux](https://github.com/aleyvag/ulanzi-d200h-linux) — D200H HID bridge for Linux
+- [racerxdl/ulanzi-d200-linux](https://github.com/racerxdl/ulanzi-d200-linux) — D200 daemon and web UI for Linux
+- [skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) — Eval loop used to benchmark the skill
+
+## Happy vibe coding 💯
+Made with ❤️ by [Proyecto 26](https://proyecto26.com) - Changing the world with small contributions.
+
+One hand can accomplish great things, but many can take you into space and beyond! 🌌
+
+Together we do more, together we are more ❤️ <img width="150px" src="https://avatars0.githubusercontent.com/u/28855608?s=200&v=4" align="right">
